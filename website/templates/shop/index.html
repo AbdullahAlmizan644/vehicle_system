@@ -1,0 +1,271 @@
+{% extends "shop/base.html" %}
+{% block title %} Home {%endblock %}
+{% block head %}
+{{ super() }}
+
+<style>
+
+</style>
+
+
+{% endblock %}
+{% block content %}
+
+<!-- Hero Section Begin -->
+<section class="hero spad set-bg" data-setbg={{ url_for("static", filename="shop/img/hero-bg.jpg" )}}>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="hero__text">
+                    <div class="hero__text__title">
+                        <span>FIND Everything In One place</span>
+                        <h2>Welcome To Vehicle Insurance & Service</h2>
+                    </div>
+                    <!-- <div class="hero__text__price">
+                            <div class="car-model">Model 2019</div>
+                            <h2>$399<span>/Month</span></h2>
+                        </div> -->
+                    <a href="/shop" class="primary-btn"><img src="" alt="">Visit Shop</a>
+                    <!-- <a href="#" class="primary-btn more-btn">Learn More</a> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- Services Section Begin -->
+<section class="services spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Our Services</span>
+                    <h2>What We Offers</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="services__item">
+                    <img src={{url_for("static", filename="shop/img/services/services-1.png" )}} alt="">
+                    <h5>Rental A Vehicle</h5>
+                    <p>Consectetur adipiscing elit incididunt ut labore et dolore magna aliqua. Risus commodo
+                        viverra maecenas.</p>
+                    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="services__item">
+                    <img src={{url_for("static", filename="shop/img/services/services-2.png" )}} alt="">
+                    <h5>Buying A Vehicle</h5>
+                    <p>Consectetur adipiscing elit incididunt ut labore et dolore magna aliqua. Risus commodo
+                        viverra maecenas.</p>
+                    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="services__item">
+                    <img src={{url_for("static", filename="shop/img/services/services-3.png" )}} alt="">
+                    <h5>Vehicle Maintenance</h5>
+                    <p>Consectetur adipiscing elit incididunt ut labore et dolore magna aliqua. Risus commodo
+                        viverra maecenas.</p>
+                    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="services__item">
+                    <img src={{url_for("static", filename="shop/img/services/services-4.png" )}} alt="">
+                    <h5>Support 24/7</h5>
+                    <p>Consectetur adipiscing elit incididunt ut labore et dolore magna aliqua. Risus commodo
+                        viverra maecenas.</p>
+                    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section End -->
+
+<!-- Feature Section Begin -->
+<section class="feature spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="feature__text">
+                    <div class="section-title">
+                        <!-- <span>Our Feature</span> -->
+                        <h2>Repair Your Vehicle</h2>
+                    </div>
+                    <div class="feature__text__desc">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                            viverra maecenas accumsan lacus vel facilisis.</p>
+                    </div>
+                    <div class="feature__text__btn">
+                        <a href="/profile" class="primary-btn">Repair Vehicle</a>
+                        <!-- <a href="#" class="primary-btn partner-btn">Our Partners</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-4">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-6">
+                        <div class="feature__item">
+                            <div class="feature__item__icon">
+                                <img src={{url_for("static", filename="shop/img/feature/feature-1.png" )}} alt="">
+                            </div>
+                            <h6>Engine</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-6">
+                        <div class="feature__item">
+                            <div class="feature__item__icon">
+                                <img src={{url_for("static", filename="shop/img/feature/feature-2.png" )}} alt="">
+                            </div>
+                            <h6>Turbo</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-6">
+                        <div class="feature__item">
+                            <div class="feature__item__icon">
+                                <img src={{url_for("static", filename="shop/img/feature/feature-3.png" )}} alt="">
+                            </div>
+                            <h6>Colling</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-6">
+                        <div class="feature__item">
+                            <div class="feature__item__icon">
+                                <img src={{url_for("static", filename="shop/img/feature/feature-4.png" )}} alt="">
+                            </div>
+                            <h6>Suspension</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-6">
+                        <div class="feature__item">
+                            <div class="feature__item__icon">
+                                <img src={{url_for("static", filename="shop/img/feature/feature-5.png" )}} alt="">
+                            </div>
+                            <h6>Electrical</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-6">
+                        <div class="feature__item">
+                            <div class="feature__item__icon">
+                                <img src={{url_for("static", filename="shop/img/feature/feature-6.png" )}} alt="">
+                            </div>
+                            <h6>Brakes</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Feature Section End -->
+
+<!-- Car Section Begin -->
+<section class="car spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Our Vehicle</span>
+                    <h2>Latest Product </h2>
+                </div>
+                <!-- <ul class="filter__controls">
+                        <li class="active" data-filter="*">Most Researched</li>
+                        <li data-filter=".sale">Latest on sale</li>
+                    </ul> -->
+            </div>
+        </div>
+        <div class="row car-filter">
+
+            {% for product in products[-8::] %}
+            <div class="col-lg-3 col-md-4 col-sm-6 mix sale">
+                <div class="car__item">
+                    <div class="car__item__pic__slider owl-carousel">
+                        {% set img="img/" + product.4 %}
+                        <img src={{url_for("static", filename=img)}} alt="">
+                    </div>
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">{{ product.7 }}</div>
+                            <h5><a href="#">{{product.1}}</a></h5>
+                            <!-- <ul>
+                                    <li><span>35,000</span> mi</li>
+                                    <li>Auto</li>
+                                    <li><span>700</span> hp</li>
+                                </ul> -->
+                        </div>
+                        {% if product.5 =="Rent" %}
+                        <div class="car__item__price">
+                            <a href="/product_details/{{product.0}}"><span class="car-option">For Rent</span></a>
+                            <h6>{{product.2}}Tk<span>/Month</span></h6>
+                        </div>
+                        {%endif%}
+                        {% if product.5 =="Buy" %}
+                        <div class="car__item__price">
+                            <a href="/product_details/{{product.0}}"> <span class="car-option sale">For Sale</span></a>
+                            <h6>$73,900</h6>
+                        </div>
+                        {%endif%}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+
+        </div>
+    </div>
+</section>
+
+<section class="latest spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Our Blog</span>
+                    <h2>Latest News Updates</h2>
+                    <!-- <p>Sign up for the latest Automobile Industry information and more. Duis aute<br /> irure -->
+                        <!-- dolorin reprehenderits volupta velit dolore fugiat.</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            {% for post in posts[-5::] %}
+            {% set img="img/" + post.4 %}
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="blog__item">
+                    <div class="blog__item__pic set-bg" data-setbg={{url_for("static", filename=img )}}>
+                        <ul>
+                            <li>{{post.3}}</li>
+                            <li>{{ post.5}}</li>
+                            <!-- <li>8 Comment</li> -->
+                        </ul>
+                    </div>
+                    <div class="blog__item__text">
+                        <h5><a href="/review_details/{{ post.0}}">{{post.1}}</a></h5>
+                        <p>{{post.2}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- Latest Blog Section End -->
+
+
+
+
+
+{% endblock %}

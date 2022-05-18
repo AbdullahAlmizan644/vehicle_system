@@ -1,0 +1,80 @@
+{% extends "shop/base.html" %}
+{% block title %} Product Details  {% endblock %}
+{% block head %}
+{{ super() }}
+
+<style>
+    
+</style>
+
+
+{% endblock %}
+{% block content %}
+
+
+
+    <!-- Car Details Section Begin -->
+    <section class="car-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="car__details__pic">
+                        <div class="car__details__pic__large">
+                            {% set img= "img/" + product.4 %}
+                            <img class="car-big-img" src={{ url_for("static", filename=img)}} alt="">
+                        </div>
+                    </div>
+                    <div class="car__details__tab">
+                        <!-- <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Vehicle
+                                    Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Technical</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Features & Options</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">Vehicle Location</a>
+                            </li>
+                        </ul> -->
+                        <div class="tab-content">
+                            <h3>Product Details</h3><br>
+                            {{product.3 }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="car__details__sidebar">
+                        <div class="car__details__sidebar__model">
+                            <ul>
+                                <li>Model <span>{{ product.1 }}</span></li>
+                                <!-- <li>Vin <span>3VWKM245686</span></li> -->
+                            </ul>
+                            <!-- <a href="#" class="primary-btn">Get Today Is Price</a>
+                            <p>Pricing in 11/26/2019</p> -->
+                        </div>
+                        <div class="car__details__sidebar__payment">
+                            <ul>
+                                <!-- <li>MSRP <span>$120,000</span></li>
+                                <li>Dealer Discounts <span>$3,000</span></li> -->
+                                <li>Price <span>{{product.2 }} Tk</span></li>
+                            </ul>
+                            {% if product.5 =="Rent" %}
+                            <a href="/rent_checkout/{{product.0}}" class="primary-btn"><i class="fa fa-credit-card"></i>Rent</a>
+                            {% endif %}
+                            {% if product.5 =="Buy" %}
+                            <a href="/checkout/{{product.0}}" class="primary-btn"><i class="fa fa-credit-card"></i>Buy</a>
+                            {% endif %}
+                            <!-- <a href="#" class="primary-btn sidebar-btn"><i class="fa fa-sliders"></i>Rent</a> -->
+                            <!-- <a href="#" class="primary-btn sidebar-btn"><i class="fa fa-money"></i> Value Trade</a>     -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Car Details Section End -->
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "shop/base.html" %}
+{% block title %}Confirm{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <h1 style="text-align: center; color: lightblue;">Thank You.</h1><br>
+    <h3 style="text-align: center; color: lightcoral;">Your insurace plan approved!</h3>
+    <h3 style="text-align: center; color: lightgreen;">Your vehicle insurance validity is <span style="color: rgb(22, 65, 22);">{{days}}</span> </h3><br>
+    <h3>after this date your insurance validity will over and you cannot find any service from us.</h3>
+    <!-- <a href="/shop" style="margin-left:500px "><button class="btn btn-primary">Back shop</button></a> -->
+</div>
+
+{% endblock %}

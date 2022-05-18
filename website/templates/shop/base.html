@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="description" content="HVAC Template">
+    <meta name="keywords" content="HVAC, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}--Vehicle Service</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href={{url_for("static", filename="shop/css/bootstrap.min.css" )}} type="text/css">
+    <link rel="stylesheet" href={{url_for("static", filename="shop/css/font-awesome.min.css" )}} type="text/css">
+    <link rel="stylesheet" href={{url_for("static", filename="shop/css/elegant-icons.css" )}} type="text/css">
+    <link rel="stylesheet" href={{url_for("static", filename="shop/css/nice-select.css" )}} type="text/css">
+    <link rel="stylesheet" href={{url_for("static", filename="shop/css/magnific-popup.css" )}} type="text/css">
+    <link rel="stylesheet" href={{url_for("static", filename="shop/css/jquery-ui.min.css" )}} type="text/css">
+    <link rel="stylesheet" href={{url_for("static", filename="shop/css/owl.carousel.min.css" )}} type="text/css">
+    <link rel="stylesheet" href={{url_for("static", filename="shop/css/slicknav.min.css" )}} type="text/css">
+    <link rel="stylesheet" href={{url_for("static", filename="shop/css/style.css" )}} type="text/css">
+    <style>
+        .logoDesign{
+            font-size: 150%;
+            font-weight: 1000;
+            color: lightseagreen;
+            text-decoration: none;
+            
+        }
+
+        .logoDesign:hover{
+            color: lightcoral; 
+            text-decoration: none;           
+        }
+    </style>
+    {% endblock %}
+</head>
+
+<body>
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__widget">
+            <a href="#"><i class="fa fa-cart-plus"></i></a>
+            <a href="#" class="search-switch"><i class="fa fa-search"></i></a>
+            <a href="#" class="primary-btn">Add Car</a>
+        </div>
+        <div class="offcanvas__logo">
+            <a href="/"><img src="img/logo.png" alt=""></a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <ul class="offcanvas__widget__add">
+            <li><i class="fa fa-clock-o"></i> Week day: 08:00 am to 18:00 pm</li>
+            <li><i class="fa fa-envelope-o"></i> Info.colorlib@gmail.com</li>
+        </ul>
+        <div class="offcanvas__phone__num">
+            <i class="fa fa-phone"></i>
+            <span>(+12) 345 678 910</span>
+        </div>
+        <div class="offcanvas__social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-google"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <ul class="header__top__widget">
+                        </ul>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="header__top__right">
+                            <div class="header__top__phone">
+                                <i class="fa fa-phone"></i>
+                                <span>018x-xxx-xxx</span>
+                            </div>
+                            <div class="header__top__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <!-- <a href="/dashboard"><i class="fa fa-home">Admin</i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="/" class="logoDesign">VehicleCare</a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="header__nav">
+                        <nav class="header__menu">
+                            <ul>
+                                <li class=""><a href="/">Home</a></li>
+                                <li><a href="/shop">Shop</a></li>
+                                <li><a href="/review">Review</a></li>
+                                <li><a href="/pricing">Insurance</a></li>
+                                {% if "user" not in session %}
+                                <li class=""><a href="/login">Login</a></li>
+                                {% else %}
+                                <li class=""><a href="/profile">{{ session["user"] }}</a></li>
+                                {% endif %}
+                                <li><a href="/about">About</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <span class="fa fa-bars"></span>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul class=flashes>
+            {% for category, message in messages %}
+            {% if category == "error"%}
+            <div class="alert alert-danger" role="alert">
+                    {{message}}
+            </div>
+            {% elif category=="success" %}
+            <div class="alert alert-success" role="alert">
+                    {{message}}
+            </div>
+            {% endif %}
+            {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+
+    {% block content %} {% endblock %}
+
+
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer set-bg" data-setbg="img/footer-bg.jpg">
+        <div class="container">
+            <div class="footer__contact">
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="/" class="logoDesign">VehicleCare</a>
+                        </div>
+                        <p>Our Shop Location:Gec Moor,Chittagong</p>
+                        <div class="footer__social">
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="google"><i class="fa fa-google"></i></a>
+                            <a href="#" class="skype"><i class="fa fa-skype"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer__brand">
+                        <h5 class="text-info">Link</h5>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Home</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Review</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Shop</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Repair</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> About</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Service</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <div class="footer__copyright__text">
+                <p>Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved |
+                </p>
+            </div>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+
+    <!-- Js Plugins -->
+    <script src={{url_for("static", filename="shop/js/jquery-3.3.1.min.js" )}}></script>
+    <script src={{url_for("static", filename="shop/js/bootstrap.min.js" )}}></script>
+    <script src={{url_for("static", filename="shop/js/jquery.nice-select.min.js" )}}></script>
+    <script src={{url_for("static", filename="shop/js/jquery-ui.min.js" )}}></script>
+    <script src={{url_for("static", filename="shop/js/jquery.magnific-popup.min.js" )}}></script>
+    <script src={{url_for("static", filename="shop/js/mixitup.min.js" )}}></script>
+    <script src={{url_for("static", filename="shop/js/jquery.slicknav.js" )}}></script>
+    <script src={{url_for("static", filename="shop/js/owl.carousel.min.js" )}}></script>
+    <script src={{url_for("static", filename="shop/js/main.js" )}}></script>
+</body>
+
+</html>

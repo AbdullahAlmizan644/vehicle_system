@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>{% block title%} {% endblock %}- Dashboard</title>
+  <link href={{url_for("static", filename="admin/vendor/fontawesome-free/css/all.min.css")}} rel="stylesheet" type="text/css">
+  <link href={{url_for("static", filename="admin/vendor/bootstrap/css/bootstrap.min.css")}} rel="stylesheet" type="text/css">
+  <link href={{url_for("static", filename="admin/css/ruang-admin.min.css")}} rel="stylesheet">
+  {% endblock %}
+</head>
+
+<body id="page-top">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+        <div class="sidebar-brand-icon">
+          <!-- <img src="img/logo/logo2.png"> -->
+        </div>
+        <div class="sidebar-brand-text mx-3">Home</div>
+      </a>
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/dashboard">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Features
+      </div>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/all_user" data-t   oggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-user"></i>
+          <span>User</span>
+        </a>
+        <a class="nav-link collapsed" href="/all_product" data-t   oggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>Product</span>
+        </a>
+        <a class="nav-link collapsed" href="/all_review" data-t   oggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-tasks"></i>
+          <span>Review</span>
+        </a>
+        <a class="nav-link collapsed" href="/all_repair" data-t   oggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-tasks"></i>
+          <span>Repair</span>
+        </a>
+        <a class="nav-link collapsed" href="/all_rent" data-t   oggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-bars"></i>
+          <span>Rents</span>
+        </a>
+        <a class="nav-link collapsed" href="/all_order" data-t   oggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>orders</span>
+        </a>
+        <a class="nav-link collapsed" href="/all_insurance" data-t   oggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-bars"></i>
+          <span>insurance</span>
+        </a>
+        <a class="nav-link collapsed" href="/all_comment" data-t   oggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-comment"></i>
+          <span>comments</span>
+        </a>
+      </li>
+
+      <hr class="sidebar-divider">
+      <div class="version" id="version-ruangadmin"></div>
+    </ul>
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+          <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <form class="navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-1 small" placeholder="What do you want to look for?"
+                      aria-label="Search" aria-describedby="basic-addon2" style="border-color: #3f51b5;">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src={{url_for("static", filename="img/fahad.jpg")}} style="max-width: 60px">
+                <span class="ml-2 d-none d-lg-inline text-white small">Abdullah Al Fahad</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="admin_logout">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- Topbar -->
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul class=flashes>
+            {% for category, message in messages %}
+            {% if category == "error"%}
+            <div class="alert alert-danger" role="alert">
+                    {{message}}
+            </div>
+            {% elif category=="success" %}
+            <div class="alert alert-success" role="alert">
+                    {{message}}
+            </div>
+            {% endif %}
+            {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+        {% block content %} {% endblock %}
+
+
+
+              <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>copyright &copy; Dashboard
+            </span>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <script src={{url_for("static", filename="admin/vendor/jquery/jquery.min.js")}}></script>
+  <script src={{url_for("static", filename="admin/vendor/bootstrap/js/bootstrap.bundle.min.js")}}></script>
+  <script src={{url_for("static", filename="admin/vendor/jquery-easing/jquery.easing.min.js")}}></script>
+  <script src={{url_for("static", filename="admin/js/ruang-admin.min.js")}}></script>
+  <script src={{url_for("static", filename="admin/vendor/chart.js/Chart.min.js")}}></script>
+  <script src={{url_for("static", filename="admin/js/demo/chart-area-demo.js")}}></script>  
+</body>
+
+</html>
